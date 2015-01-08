@@ -1,103 +1,116 @@
-$img-path: "/img/";
+$img-path: '/img/';
 
 $fe-primary: #f60f0f;
 $fe-accent: #e64a19;
 
+$body-font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
 $medium-range: (40.063em, 64em);
-$medium-up: "only screen and (min-width:#{lower-bound($medium-range)})";
+$medium-up: 'only screen and (min-width:#{lower-bound($medium-range)})';
 
 body {
-	background: url(#{$img-path}background-mobile.jpg);
-	background-size: cover;
-	background-position: center center;
-	font-weight: bold;
+  font-family: $body-font-family;
+  font-weight: bold;
+  background: url(#{$img-path}background-mobile.jpg);
+  background-position: center center;
+  background-size: cover;
 
-	@media #{$medium-up} {
-		background: url(#{$img-path}background.jpg);
-		background-size: cover;
-		background-position: center center;
-	}
+  @media #{$medium-up} {
+    background: url(#{$img-path}background.jpg);
+    background-position: center center;
+    background-size: cover;
+  }
 
-	a {
-		color: black;
-		font-weight: bold;
-	}
+  a {
+    font-weight: bold;
+    color: black;
+  }
 }
 
 .content {
-  	margin-top: 215px;
-	@include grid-column($columns: 11, $center: true);
+  @include grid-column($columns: 12, $center: true);
+  margin-top: 300px;
+  color: white;
+  padding: rem-calc(12 0);
 
-	@media #{$medium-up} {
-		margin-top: 385px;
-		@include grid-column($columns: 8, $center: true)
-	}
+  @media #{$medium-up} {
+    @include grid-column($columns: 10, $center: true);
+    margin-top: 450px;
+  }
 
-	img {
-		margin: 150px auto 40px;
-		display: block;
-	}
+  img {
+    display: block;
+    margin: 150px auto 40px;
+  }
 
-	.typeform-share {
-		display: block;
-		width: 200px;
-		margin: 40px auto;
-		color: white;
-		font-weight: bold;
-		font-size: 1.4rem;
+  .typeform-share {
+    font-size: 1.4rem;
+    font-weight: bold;
+    display: block;
+    width: 200px;
+    margin: 40px auto;
+    color: white;
 
-		@media #{$medium-up} {
-			margin: 0 auto;
-		}
-	}
+    @media #{$medium-up} {
+      margin: 0 auto;
+    }
+  }
 
-	h1, h2, p, a {
-		opacity: 0.8;
-		text-align: center;
-	}
+  h1, h2, p, a {
+    text-align: center;
+    opacity: .8;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .7);
+    line-height: 1.2;
+  }
 
-	h1 {
-		font-weight: 700;
-		font-size: 1.7rem;
-		
-		@media #{$medium-up} {
-			font-size: 3rem;
-  			margin: 50px auto;
-		}
-	}
+  a {
+    color: $fe-primary;
+    text-decoration: none;
+  }
 
-	h2 {
-		font-size: 17px;
-		line-height: 20px;
-		margin-top: 10px;
+  h1 {
+    font-size: rem-calc(28);
+    margin-top: 0;
+    font-weight: 300;
+    color: #fff;
 
-		@media #{$medium-up} {
-			font-size: 28px;
-			line-height: 30px;
-		}
-	}
+    @media #{$medium-up} {
+      font-size: 3rem;
+      margin: 50px auto;
+    }
+  }
 
-	p {
-		a {
-			display: block;
-			
-			@media #{$medium-up} {
-				display: inline-block;
-			}
-		}
-	}
+  h2 {
+    font-size: rem-calc(18);
+    margin-top: 10px;
+
+    @media #{$medium-up} {
+      font-size: 28px;
+      line-height: 30px;
+    }
+  }
+
+  p {
+    a {
+      display: block;
+
+      @media #{$medium-up} {
+        display: inline-block;
+      }
+    }
+  }
 }
 
 footer {
-	position: absolute;
-	bottom: 0;
-	right: 30px;
-	opacity: .9;
+  position: absolute;
+  right: 30px;
+  bottom: 0;
+  opacity: .9;
 
-	a {
-		color: black;
-		font-weight: bold;
-		text-decoration: none;
-		opacity: 0.8;
-	}
+  a {
+    font-weight: bold;
+    text-decoration: none;
+    opacity: .8;
+    color: black;
+  }
 }
